@@ -18,6 +18,14 @@ describe('AppService', () => {
       expect(service.getData()).toEqual({ message: 'Welcome to api!' });
     });
   });
+
+  describe('getTickets', () => {
+    it('shoud return array of tickets', () => {
+      expect(service.getTickets()).toEqual([]);
+    });
+  });
+
 });
+
 
 
