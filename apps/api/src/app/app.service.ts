@@ -1,35 +1,59 @@
-import { HttpService } from '@nestjs/axios';
+import { ILeg } from './interface/ileg';
+import { IRail } from './interface/irail';
+import { ITicket } from './interface/iticket';
+import { RailTransformService } from './services/rail-transform.service';
+import { RailService } from './services/rail.service';
 import { Injectable } from '@nestjs/common';
 import { Message } from '@workspace-nx-nestjs-ng/api-interfaces';
-import { catchError, map, Observable, of, tap, from, reduce } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
+import { EnRailType } from './enum/en-rail-type.enum';
 
-import * as fs from 'fs';
+export const error = () => catchError((err, obs) => {
+  console.log(err);
+  return of(err);
+});
 
-export const railsFile = 'assets/data/results.json';
+export const audit = () => tap(t => console.log(t));
 
 @Injectable()
 export class AppService {
 
+  private readonly rail;
+
   constructor(
-    private http: HttpService,
-  ) { }
+    private railSrv: RailService,
+    private dataTransformSrv: RailTransformService
+  ) {
+    this.rail = this.railSrv.factory(EnRailType.Offline);
+  }
 
   getData(): Message {
     return { message: 'Welcome to api!' };
   }
 
-  getTickets(): Observable<any[]> {
-    const jsonString = fs.readFileSync(railsFile, { encoding: 'utf8', flag: 'r' });
-    const rails = JSON.parse(jsonString);
-    const legs = rails.reduce((acc: any[], curr: any) => [...acc, ...(curr?.Legs || [])], []);
-    const tkts = legs.reduce((acc: any[], curr: any) => [...acc, ...(curr?.TKTs ? curr.TKTs.map((tkt: any) => ({ ...tkt, from: curr.DepStnFull, to: curr.ArrStnFull })) : [])], []);
-    return of(tkts)
+  getRails(): Observable<IRail[]> {
+    return this.rail.getData()
       .pipe(
-        tap(t => console.log(t)),
-        catchError((err, obs) => {
-          console.log(err);
-          return of(err);
-        })
+        audit(),
+        error()
+      );
+  }
+
+  getLegs(): Observable<ILeg[]> {
+    return this.rail.getData()
+      .pipe(
+        map(rails => rails ? this.dataTransformSrv.mapToLegs(rails) : null),
+        audit(),
+        error()
+      );
+  }
+
+  getTickets(): Observable<ITicket[]> {
+    return this.rail.getData()
+      .pipe(
+        map(rails => rails ? this.dataTransformSrv.mapToTKTs(rails) : null),
+        audit(),
+        error()
       );
   }
 

@@ -3,6 +3,10 @@ import { Test } from '@nestjs/testing';
 import { lastValueFrom } from 'rxjs';
 
 import { AppService } from './app.service';
+import { RailOfflineService } from './services/rail-offline.service';
+import { RailOnlineService } from './services/rail-online.service';
+import { RailTransformService } from './services/rail-transform.service';
+import { RailService } from './services/rail.service';
 
 describe('AppService', () => {
   let service: AppService;
@@ -10,7 +14,7 @@ describe('AppService', () => {
   beforeAll(async () => {
     const app = await Test.createTestingModule({
       imports: [HttpModule],
-      providers: [AppService],
+      providers: [AppService, RailService, RailTransformService, RailOfflineService, RailOnlineService],
     }).compile();
 
     service = app.get<AppService>(AppService);
