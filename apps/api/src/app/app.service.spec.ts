@@ -1,4 +1,6 @@
+import { HttpModule } from '@nestjs/axios';
 import { Test } from '@nestjs/testing';
+import { lastValueFrom } from 'rxjs';
 
 import { AppService } from './app.service';
 
@@ -7,6 +9,7 @@ describe('AppService', () => {
 
   beforeAll(async () => {
     const app = await Test.createTestingModule({
+      imports: [HttpModule],
       providers: [AppService],
     }).compile();
 
@@ -20,8 +23,9 @@ describe('AppService', () => {
   });
 
   describe('getTickets', () => {
-    it('shoud return array of tickets', () => {
-      expect(service.getTickets()).toEqual([]);
+    it('shoud return array of tickets with more than one element', async () => {
+      const res = await lastValueFrom(service.getTickets());
+      expect(res.length > 0).toBeTruthy();
     });
   });
 

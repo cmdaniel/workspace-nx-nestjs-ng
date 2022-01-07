@@ -1,0 +1,633 @@
+	[{
+		"ReturnUid": "",
+		"Infants": "0",
+		"Co2Produced": "14.23",
+		"Children": "0",
+		"ArrGateWay": "XXX",
+		"Format": "response",
+		"MinChildPrice": "0.00",
+		"DateStored": "20171020102135",
+		"DepDate": "171025",
+		"RecNum": "TRN-4",
+		"Source": "R",
+		"DiscountID": "",
+		"ReturnArrDate": "88888888",
+		"BookingPolicy": "",
+		"OutBoundUid": "VT754500",
+		"Icons": "",
+		"BookingReason": "",
+		"MaxClass": "Standard",
+		"BookingPolicyDesc": "",
+		"BeforeAfterAt": "@",
+		"ScanDate": "20171020",
+		"DepStationCode": "MAN",
+		"DiscountRule": "",
+		"BookingRef": "",
+		"Currency": "GBP",
+		"DepGateWay": "XXX",
+		"OperatorPri": 999,
+		"DiscountBKG": "0.00",
+		"ScanTime": "1021",
+		"Split": "",
+		"Supplier": "EVI",
+		"DiscountVoucherCodesApplied": "",
+		"DistanceTravelled": "188.97",
+		"DepTime": "0755",
+		"OutBoundLegs": "6",
+		"ReturnLegs": "0",
+		"ExtraTimeToChange": "0",
+		"DepStationCodeFull": "Manchester Piccadilly ",
+		"RequestType": "CTT",
+		"ErrorStatus": "1",
+		"Operator": "EVI",
+		"Legs": [
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Stockport ",
+				"DepStnFull": "Manchester Piccadilly ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "MAN",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "SPT",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0803",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_145.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "145.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "145.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single SP",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "37_3082112997--00474--Standard-S-VX-BAO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_150.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "150.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "150.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "19_3082112997--00452--Standard-S-VX-BAO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_169.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "169.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "169.00",
+						"TravelTimes": "UKN",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Anytime Single",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "2_3082112997--00000--Standard-S--SOS-",
+						"TravelCardDiscChd": "0.00"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0755"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Wilmslow ",
+				"DepStnFull": "Stockport ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "SPT",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "WML",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0810",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0804"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Crewe ",
+				"DepStnFull": "Wilmslow ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "WML",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "CRE",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0827",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0811"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Lichfield Trent Valley ",
+				"DepStnFull": "Crewe ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "CRE",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "LTV",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0900",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0829"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Tamworth ",
+				"DepStnFull": "Lichfield Trent Valley ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "LTV",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "TAM",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0906",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0901"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Euston, London ",
+				"DepStnFull": "Tamworth ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "TAM",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "4_3082112997_AA17102507000000000000_401",
+				"ArrStn": "EUS",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "1016",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT754500",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0907"
+			}
+		],
+		"DiscountCHD": "0.00",
+		"Adults": "1",
+		"TotalStops": "0",
+		"ReturnDepTime": "8888",
+		"ReturnArrTime": "8888",
+		"DiscountADT": "0.00",
+		"Via": "",
+		"ArrTime": "1016",
+		"ArrStationCodeFull": "Euston, London ",
+		"apiRecNum": "API-9",
+		"ArrStationCode": "EUS",
+		"MinAdultPrice": "0.00",
+		"UserRef": "RED",
+		"ArrDate": "171025",
+		"RecType": "TRN",
+		"SingleOrReturn": "S",
+		"ReturnDepDate": "88888888",
+		"DiscountGRP": "0"
+	},
+	{
+		"ReturnUid": "",
+		"Infants": "0",
+		"Co2Produced": "13.93",
+		"Children": "0",
+		"ArrGateWay": "XXX",
+		"Format": "response",
+		"MinChildPrice": "0.00",
+		"DateStored": "20171020102135",
+		"DepDate": "171025",
+		"RecNum": "TRN-5",
+		"Source": "R",
+		"DiscountID": "",
+		"ReturnArrDate": "88888888",
+		"BookingPolicy": "",
+		"OutBoundUid": "VT755000",
+		"Icons": "",
+		"BookingReason": "",
+		"MaxClass": "Standard",
+		"BookingPolicyDesc": "",
+		"BeforeAfterAt": "@",
+		"ScanDate": "20171020",
+		"DepStationCode": "MAN",
+		"DiscountRule": "",
+		"BookingRef": "",
+		"Currency": "GBP",
+		"DepGateWay": "XXX",
+		"OperatorPri": 999,
+		"DiscountBKG": "0.00",
+		"ScanTime": "1021",
+		"Split": "",
+		"Supplier": "EVI",
+		"DiscountVoucherCodesApplied": "",
+		"DistanceTravelled": "185.02",
+		"DepTime": "0815",
+		"OutBoundLegs": "4",
+		"ReturnLegs": "0",
+		"ExtraTimeToChange": "0",
+		"DepStationCodeFull": "Manchester Piccadilly ",
+		"RequestType": "CTT",
+		"ErrorStatus": "1",
+		"Operator": "EVI",
+		"Legs": [
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Stockport ",
+				"DepStnFull": "Manchester Piccadilly ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "MAN",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "5_3082112997_AA17102507000000000000_501",
+				"ArrStn": "SPT",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0822",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_115.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "115.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "115.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single SP",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "38_3082112997--00474--Standard-S-VX-BBO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_130.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "130.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "130.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "20_3082112997--00452--Standard-S-VX-BBO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_145.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "145.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "145.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single SP",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "37_3082112997--00474--Standard-S-VX-BAO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_150.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "150.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "150.00",
+						"TravelTimes": "VX",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Standard Advance Single",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "19_3082112997--00452--Standard-S-VX-BAO-1",
+						"TravelCardDiscChd": "0.00"
+					},
+					{
+						"MinPaxPerTck": "0",
+						"MinAdtPerTck": "0",
+						"TravelCardsApplied": "_169.00",
+						"ChdPrice": "0.00",
+						"MinChdPerTck": "0",
+						"CanTicketOnDeparture": "B",
+						"Operator": "EVI",
+						"AdtPrice": "169.00",
+						"MaxAdtPerTck": "1",
+						"TravelCardDiscAdt": "169.00",
+						"TravelTimes": "UKN",
+						"MaxPaxPerTck": "1",
+						"MaxChdPerTck": "1",
+						"ValidTo": "88888888",
+						"ProfileShouldNotBook": "114-301-315-325-361-401-403",
+						"TicketDescription": "Anytime Single",
+						"ValidFrom": "88888888",
+						"SingleOrReturn": "S",
+						"TicketCode": "2_3082112997--00000--Standard-S--SOS-",
+						"TravelCardDiscChd": "0.00"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT755000",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0815"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Stoke-On-Trent ",
+				"DepStnFull": "Stockport ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "SPT",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "5_3082112997_AA17102507000000000000_501",
+				"ArrStn": "SOT",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0848",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-38_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-20_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT755000",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0823"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Milton Keynes Central ",
+				"DepStnFull": "Stoke-On-Trent ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "SOT",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "5_3082112997_AA17102507000000000000_501",
+				"ArrStn": "MKC",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "0949",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-38_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-20_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT755000",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0850"
+			},
+			{
+				"LegDirection": "O",
+				"ArrStnFull": "Euston, London ",
+				"DepStnFull": "Milton Keynes Central ",
+				"RouteTransport": "TRAIN",
+				"Operator": "VT",
+				"DepStn": "MKC",
+				"DepDate": "20171025",
+				"LegCo2": "0.00",
+				"SeatsReservable": "1",
+				"RouteBookingCode": "5_3082112997_AA17102507000000000000_501",
+				"ArrStn": "EUS",
+				"ClassesAvailForLeg": "",
+				"sTrnUltimateDest": "EUS",
+				"ArrTime": "1026",
+				"LegDistance": "0.00",
+				"TKTs": [
+					{
+						"ForRouteLEGTicket": "O-1-38_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-20_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-37_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-19_3082112997"
+					},
+					{
+						"ForRouteLEGTicket": "O-1-2_3082112997"
+					}
+				],
+				"SeatsSelected": "",
+				"RouteName": "VT755000",
+				"NumberOfStops": "0",
+				"sTrnStartingPoint": "MAN",
+				"DepTime": "0949"
+			}
+		],
+		"DiscountCHD": "0.00",
+		"Adults": "1",
+		"TotalStops": "0",
+		"ReturnDepTime": "8888",
+		"ReturnArrTime": "8888",
+		"DiscountADT": "0.00",
+		"Via": "",
+		"ArrTime": "1026",
+		"ArrStationCodeFull": "Euston, London ",
+		"apiRecNum": "API-10",
+		"ArrStationCode": "EUS",
+		"MinAdultPrice": "0.00",
+		"UserRef": "RED",
+		"ArrDate": "171025",
+		"RecType": "TRN",
+		"SingleOrReturn": "S",
+		"ReturnDepDate": "88888888",
+		"DiscountGRP": "0"
+	}]
+
