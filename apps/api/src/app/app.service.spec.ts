@@ -26,6 +26,20 @@ describe('AppService', () => {
     });
   });
 
+  describe('getRails', () => {
+    it('shoud return array of Rails with more than one element', async () => {
+      const res = await lastValueFrom(service.getRails());
+      expect(res.length > 0).toBeTruthy();
+    });
+  });
+
+  describe('getLegs', () => {
+    it('shoud return array of Legs with more than one element', async () => {
+      const res = await lastValueFrom(service.getLegs());
+      expect(res.length > 0).toBeTruthy();
+    });
+  });
+
   describe('getTickets', () => {
     it('shoud return array of tickets with more than one element', async () => {
       const res = await lastValueFrom(service.getTickets());
@@ -33,6 +47,7 @@ describe('AppService', () => {
     });
   });
 
+  
 });
 
 

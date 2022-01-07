@@ -18,10 +18,13 @@ export class RailService {
 
     factory(enRailType: EnRailType): IRailService {
         switch (enRailType) {
+
             case EnRailType.Online:
                 return this.railOnlineSrv;
+
             case EnRailType.Offline:
-                return this.railOfflineSrv
+                return this.railOfflineSrv;
+
         }
     }
 
