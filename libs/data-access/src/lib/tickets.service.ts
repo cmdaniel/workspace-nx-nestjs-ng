@@ -15,10 +15,10 @@ export class TicketsService {
         return this.http.get<{ tickets: ITicket[] }>(`${this.API_URL}/tickets`)
             .pipe(
                 map(response => {
-                    return response.tickets.map((quote, index) => {
+                    return response.tickets.map((ticket, index) => {
                         return {
                             id: index,
-                            ...quote
+                            ...ticket
                         };
                     });
                 })
