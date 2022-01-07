@@ -22,6 +22,7 @@
       "@workspace-nx-nestjs-ng/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
       ],
+      "@workspace-nx-nestjs-ng/data-access": ["libs/data-access/src/index.ts"],
       "@workspace-nx-nestjs-ng/states": ["libs/state/src/index.ts"]
     }
   },
