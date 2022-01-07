@@ -1,12 +1,12 @@
-import { ILeg } from './interface/ileg';
-import { IRail } from './interface/irail';
-import { ITicket } from './interface/iticket';
-import { RailTransformService } from './services/rail-transform.service';
-import { RailService } from './services/rail.service';
+import { ILeg } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { RailTransformService } from './rail-transform.service';
+import { RailService } from './rail.service';
 import { Injectable } from '@nestjs/common';
 import { Message } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { catchError, map, Observable, of, tap } from 'rxjs';
-import { EnRailType } from './enum/en-rail-type.enum';
+import { EnRailType } from '../enum/en-rail-type.enum';
 
 export const error = () => catchError((err, obs) => {
   console.log(err);

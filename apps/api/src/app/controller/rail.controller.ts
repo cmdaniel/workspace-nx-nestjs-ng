@@ -1,7 +1,7 @@
-import { IRail } from './interface/irail';
+import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Controller, Get } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { AppService } from './app.service';
+import { AppService } from '../services/app.service';
 
 @Controller()
 export class RailController {

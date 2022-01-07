@@ -1,10 +1,8 @@
-import { ITicket } from './interface/iticket';
+import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Controller, Get } from '@nestjs/common';
-
 import { Message } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Observable } from 'rxjs';
-
-import { AppService } from './app.service';
+import { AppService } from '../services/app.service';
 
 @Controller()
 export class TicketController {
@@ -19,4 +17,6 @@ export class TicketController {
   getTickets(): Observable<ITicket[]> {
     return this.appService.getTickets();
   }
+
+
 }

@@ -21,7 +21,8 @@
     "paths": {
       "@workspace-nx-nestjs-ng/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@workspace-nx-nestjs-ng/states": ["libs/state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
