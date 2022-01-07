@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TicketsActions, TicketsSelectors } from '../../../../../../libs/state/src';
+// FIXME: there is some configuration missing here, not allowing to use the TicketsService from the Nx library.
+// import { TicketsActions, TicketsSelectors } from '@workspace-nx-nestjs-ng/state';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  tickets$ = this.store.select(TicketsSelectors.selectTicketAll);
 
-  ngOnInit() {
+  constructor(private store: Store) { }
+
+  ngOnInit(): void {
+    this.store.dispatch(TicketsActions.init());
   }
+
 
 }

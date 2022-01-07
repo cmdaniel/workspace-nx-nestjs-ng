@@ -3,9 +3,9 @@ https://docs.nestjs.com/providers#services
 */
 
 import { Injectable } from '@nestjs/common';
-import { ILeg } from '../interface/ileg';
-import { IRail } from '../interface/irail';
-import { ITicket } from '../interface/iticket';
+import { ILeg } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
 
 @Injectable()
 export class RailTransformService {
@@ -20,5 +20,6 @@ export class RailTransformService {
         const tkts = legs.reduce((acc: ITicket[], curr: ILeg) => [...acc, ...(curr?.TKTs ? curr.TKTs.map((tkt: ITicket) => ({ ...tkt, from: curr.DepStnFull, to: curr.ArrStnFull })) : [])], []);
         return tkts;
     }
+
 
 }

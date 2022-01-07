@@ -17,7 +17,7 @@ export class TicketsService {
                 map(response => {
                     return response.tickets.map((ticket, index) => {
                         return {
-                            id: index,
+                            uniqueId: index,
                             ...ticket
                         };
                     });

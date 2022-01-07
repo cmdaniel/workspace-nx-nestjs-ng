@@ -9,6 +9,7 @@
     "build": "nx build",
     "test": "nx test",
     "api": "nx serve api",
+    "app": "nx serve ng-rails",
     "test-api": "nx test api",
     "test-app": "nx test app",
     "test2": "NODE_ENV=test jest --watch"
@@ -29,6 +30,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@ngrx/effects": "^13.0.2",
     "@ngrx/entity": "^13.0.2",
+    "@ngrx/router-store": "^13.0.2",
     "@ngrx/store": "^13.0.2",
     "@ngrx/store-devtools": "^13.0.2",
     "@nrwl/angular": "13.4.3",

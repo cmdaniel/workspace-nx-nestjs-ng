@@ -1,41 +1,58 @@
-import { createReducer, on, Action } from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-
-import * as TicketsActions from './ticket.actions';
 import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { Action, createReducer, on } from '@ngrx/store';
+import * as TicketActions from './ticket.actions';
 
+export const TICKETS_FEATURE_KEY = 'ticket';
 
-export const TICKETS_FEATURE_KEY = 'tickets';
 
 export interface State extends EntityState<ITicket> {
-    selectedId?: string | number; // which Tickets record has been selected
-    loaded: boolean; // has the Tickets list been loaded
+    selectedId?: string | number | null; // which Quotes record has been selected
+    loaded: boolean; // has the Quotes list been loaded
     error?: string | null; // last known error (if any)
 }
 
-export interface TicketsPartialState {
-    readonly [TICKETS_FEATURE_KEY]: State;
-}
 
-export const ticketsAdapter: EntityAdapter<ITicket> = createEntityAdapter<ITicket>();
-
-export const initialState: State = ticketsAdapter.getInitialState({
-    // set initial required properties
-    loaded: false,
+export const adapterTicket: EntityAdapter<ITicket> = createEntityAdapter<ITicket>({
+    selectId: instance => +instance.id,
+    sortComparer: sortOnDestinationsAndOrigens
 });
 
-const ticketsReducer = createReducer(
-    initialState,
-    on(TicketsActions.init, (state) => ({ ...state, loaded: false, error: null })),
-    on(TicketsActions.loadTicketsSuccess, (state, { tickets }) =>
-        ticketsAdapter.setAll(tickets, { ...state, loaded: true })
+export const initialStateTicket: State = adapterTicket.getInitialState({
+    // additional entity state properties
+    error: undefined,
+    selectedId: null,
+    loaded: false
+});
+
+function sortOnDestinationsAndOrigens(a: ITicket, b: ITicket) {
+    if (a.from === b.from) {
+        return a.to < b.to ? -1 : 1;
+    } else {
+        return a.from ? -1 : 1;
+    }
+}
+
+export const reducer = createReducer(
+    initialStateTicket,
+    on(TicketActions.init, (state) => ({ ...state, loaded: false, error: null })),
+    on(TicketActions.loadTicketsSuccess,
+        (state, action) => adapterTicket.setAll(action.tickets, { ...state, loaded: true })
     ),
-    on(TicketsActions.loadTicketsFailure, (state, { error }) => ({
-        ...state,
-        error,
-    }))
+    on(TicketActions.loadTicketsFailure,
+        (state, action) => ({
+            ...state,
+            error: action?.error
+        })
+    ),
 );
 
-export function reducer(state: State | undefined, action: Action) {
-    return ticketsReducer(state, action);
-}
+export const {
+    selectIds,
+    selectEntities,
+    selectAll,
+    selectTotal,
+} = adapterTicket.getSelectors();
+
+
+export const getSelectedId = (state: State) => state.selectedId;
