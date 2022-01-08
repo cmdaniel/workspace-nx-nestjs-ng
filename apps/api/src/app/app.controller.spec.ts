@@ -1,8 +1,8 @@
 import { HttpModule } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { TicketController } from './ticket.controller';
-import { AppService } from './app.service';
+import { TicketController } from './controller/ticket.controller';
+import { AppService } from './services/app.service';
 import { RailOfflineService } from './services/rail-offline.service';
 import { RailOnlineService } from './services/rail-online.service';
 import { RailTransformService } from './services/rail-transform.service';
