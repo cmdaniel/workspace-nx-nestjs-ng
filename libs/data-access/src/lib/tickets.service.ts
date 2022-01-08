@@ -8,13 +8,17 @@ import { Observable, throwError } from 'rxjs';
     providedIn: 'root'
 })
 export class TicketsService {
-    private API_URL = 'http://localhost:3333/api';
+
+    private readonly API_ROUTES = {
+        getAll: () => `tickets`,
+        getOne: (id: number) => `tickets/${id}`
+    }
 
     constructor(private http: HttpClient) { }
 
     getAll(): Observable<ITicket[]> {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
-        return this.http.get<ITicket[]>(`${this.API_URL}/tickets`, { headers })
+        return this.http.get<ITicket[]>(this.API_ROUTES.getAll(), { headers })
             .pipe(
                 this.addUniqId$(),
                 catchError(this.handleError$)
