@@ -14,14 +14,14 @@
   <mat-card-content>
     <p>{{ ticket?.TicketDescription }}</p>
 
-    <ng-container [ngSwitch]="!!ticket?.AdtPrice">
+    <div [ngSwitch]="!!ticket?.AdtPrice">
       <div *ngSwitchCase="true">
         <h2>Prices:</h2>
         <p>Adult: {{ ticket?.AdtPrice }}</p>
         <p>Children: {{ ticket?.ChdPrice }}</p>
       </div>
-      <div *ngSwitchDefault>Go to the Information Desk to know more about the prices and availability.</div>
-    </ng-container>
+      <div class="no-prices" *ngSwitchDefault>Go to the Information Desk to know more about the prices and availability.</div>
+    </div>
 
     <p>Single Or Return? {{ ticket?.SingleOrReturn === 'S' ? 'Single' : 'Return' }}</p>
 

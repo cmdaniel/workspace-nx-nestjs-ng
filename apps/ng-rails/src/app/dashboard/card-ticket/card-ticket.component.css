@@ -19,3 +19,12 @@
 p {
   margin-top: 12px;
 }
+
+mat-card {
+  height: 380px;
+}
+
+div.no-prices {
+  height: 120px;
+  vertical-align: center;
+}
