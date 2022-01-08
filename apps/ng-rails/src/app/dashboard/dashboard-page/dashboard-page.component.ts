@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { TicketsActions, TicketsSelectors } from '../../../../../../libs/state/src';
-// FIXME: there is some configuration missing here, not allowing to use the TicketsService from the Nx library.
-// import { TicketsActions, TicketsSelectors } from '@workspace-nx-nestjs-ng/state';
+import { TicketsActions, TicketsSelectors } from '@workspace-nx-nestjs-ng/states';
 
 @Component({
-  selector: 'app-dashboard-page',
+  // selector: 'app-dashboard-page',
+  selector: 'workspace-nx-nestjs-ng-root',
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.css']
 })

@@ -1,9 +1,8 @@
-import { IRail } from './../interface/irail';
 /*
 https://docs.nestjs.com/providers#services
 */
-
-import { IRailService } from './../interface/irail-service';
+import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { IRailService } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
 
@@ -20,5 +19,6 @@ export class RailOfflineService implements IRailService {
         const rails = JSON.parse(jsonString);
         return of(rails);
     }
+
 
 }

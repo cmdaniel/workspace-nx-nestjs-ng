@@ -1,11 +1,10 @@
-import { IRailService } from './../interface/irail-service';
 /*
 https://docs.nestjs.com/providers#services
 */
-
+import { IRailService } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Injectable } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
-import { IRail } from '../interface/irail';
+import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
 
 @Injectable()
 export class RailOnlineService implements IRailService {

@@ -1,7 +1,4 @@
-// FIXME: there is some configuration missing here, not allowing to use the TicketsService from the Nx library.
-// import { TicketsService } from '@workspace-nx-nestjs-ng/data-access';
-import { TicketsService } from '../../../../data-access/src';
-
+import { TicketsService } from '@workspace-nx-nestjs-ng/data-access';
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { fetch } from '@nrwl/angular';
