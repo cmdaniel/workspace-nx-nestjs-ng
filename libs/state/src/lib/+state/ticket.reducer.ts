@@ -14,7 +14,7 @@ export interface State extends EntityState<ITicket> {
 
 
 export const adapterTicket: EntityAdapter<ITicket> = createEntityAdapter<ITicket>({
-    selectId: instance => +instance.id,
+    selectId: instance => +(instance?.id || -1),
     sortComparer: sortOnDestinationsAndOrigens
 });
 
