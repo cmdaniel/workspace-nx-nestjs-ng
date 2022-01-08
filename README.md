@@ -37,6 +37,7 @@
 <p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
 <p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
 <p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it.</p>
+<p>I was the only one developer of this project and I had any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
 
 ## Project scope
 <p>From the ground up, just receiving a json file with Rails, Legs and Tickets, create a NodeJs Backend and an Angular Front-end to show the tickets.</p>
@@ -44,7 +45,11 @@
 ## Project Architecture
 
 ### Back-end
-In the Back-end I used the NestJs framework. It is a great, easy to use and very similar to the Angular syntaxe. It was build on the Express.
+<p>In the Back-end I used the NestJs framework. It is a great, easy to use and very similar to the Angular syntaxe. It was build on the Express.</p>
+<p>Despite a very simple scope, I tried to demonstrate some SOLID principles.</p>
+<p>**app.service**: is the main service responsible to provide data to the controllers. It receives the provider (RailService) and data transformation services by Dependence Injection. I also created some custom operators for RxJs and the result is a very clean code, easy to read and also loosely coupled with the data provider and data tranformation classes.</p>
+<p>**RailService**: It just contain a Single Responsability and a single reason to change. It has a factory method with a business rule that will factory the data provider according to condition (EnRailType). It allows provide data from the json file, but also implement an API call in the future without requires change in the main service. Beyond being prepared to future extensions, it also allows commute the data source based on Use Cases. For example, a simple method could detect a problem with the API (It was not implemented an API call, but it basic structure was) and them factory the json file instead.</p>
+
 
 
 ## Time tracking
