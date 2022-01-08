@@ -1,0 +1,50 @@
+service: nx-nestjs-api
+
+custom:
+  prune:
+    automatic: true
+    number: 3
+  serverless-layers:
+    dependenciesPath: ./package.json
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  profile: default
+  stage: development
+  lambdaHashingVersion: 20201221
+  deploymentBucket:
+    name: cmdaniel-dev-portfolio
+
+plugins:
+  - serverless-layers
+
+package:
+  individually: true
+  include:
+    - dist/apps/api/**
+    - assets
+  exclude:
+    - node_modules/**
+    - vend/**
+    - .angular/**
+    - .serverless/**
+    - .vscode/**
+    - app/**
+    - lambda-nodejs14.x/**
+    - libs/**
+    - tools/**
+
+functions:
+  index:
+    handler: dist/apps/api/main.handler
+    events:
+      - http:
+          cors: true
+          path: '/'
+          method: any
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any

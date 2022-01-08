@@ -9,9 +9,11 @@
   },
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
+    "postinstall-DESACTIVATED": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
+    "build-api": "nx build api",
+    "build-app": "nx build app",
     "test": "nx test",
     "api": "nx serve api",
     "app": "nx serve ng-rails",
@@ -43,6 +45,7 @@
     "@nrwl/angular": "13.4.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",
+    "serverless-lambda-nestjs": "^0.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
@@ -65,6 +68,7 @@
     "@nrwl/node": "13.4.3",
     "@nrwl/tao": "13.4.3",
     "@nrwl/workspace": "13.4.3",
+    "@types/aws-lambda": "^8.10.89",
     "@types/jest": "27.0.2",
     "@types/node": "14.14.33",
     "@typescript-eslint/eslint-plugin": "~5.3.0",
@@ -76,6 +80,7 @@
     "jest": "27.2.3",
     "jest-preset-angular": "11.0.0",
     "prettier": "^2.3.1",
+    "serverless-layers": "^2.5.1",
     "ts-jest": "27.0.5",
     "typescript": "~4.4.3"
   }
