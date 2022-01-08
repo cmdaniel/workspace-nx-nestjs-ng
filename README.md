@@ -1,105 +1,81 @@
 
 
-# WorkspaceNxNestjsNg
+# Full-stack Developer role test
 
-This project was generated using [Nx](https://nx.dev).
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+**Acess the deployed version of this project on this link:**
+<a href="https://www.industria-i.com.br/" target="_blank">NestJs, Angular and NX project</a>
 
-🔎 **Smart, Fast and Extensible Build System**
+<p>This project was created using:
+  <ul>
+    <li>Nx(monolith management with libs sharing between back and front-end),</li>
+    <li>NestJs (NodeJs framework),</li>
+    <li>NgRx (State Management),</li>
+    <li>RxJs (Observables pipes),</li>
+    <li>Angular (SPA framework),</li>
+    <li>and Angular Material (official Angular Components lib).</li>
+    <li> Jest for the unit tests</li>
+  </ul>     
+</p>
+<p>The deploy to containers required:
+  <ul>
+    <li>Docker,</li>
+    <li>AWS cli installation</li>
+    <li>and Amazon ECS.</li>
+   </ul>
+  </p>
 
-## Quick Start & Documentation
+🔎 **Author: Daniel Melo - cmdaniel@gmail.com**
 
-[Nx Documentation](https://nx.dev/angular)
+  **Warrington, UK - January 8th, 2022**
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
 
-[Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
+## Disclosures
 
-## Adding capabilities to your workspace
+<p>This is an autoral and open source project, but it used some important references on Internet. The main refs are listed bellow.</p>
+<p>Since it is a public repository, it doesn't disclose the name of recruiters or companies that required this coding test.</p>
+<p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
+<p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
+<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it.</p>
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+## Project scope
+<p>From the ground up, just receiving a json file with Rails, Legs and Tickets, create a NodeJs Backend and an Angular Front-end to show the tickets.</p>
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Project Architecture
 
-Below are our core plugins:
+### Back-end
+In the Back-end I used the NestJs framework. It is a great, easy to use and very similar to the Angular syntaxe. It was build on the Express.
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+## Time tracking
+<p>I described each development stack in the git commits. So, it is possible to see how I add each element, build features, fixed bugs and code refactoring.
+This project was executed in my spare time in 3 different days (06/jan, 07/jan and 08/jan/2022). </p>
+<p>In total, I spend about 9 hours in the Back and Front end, plus 2 hours building the container and deploy.</p>
 
-## Generate an application
+## Difficults during the execution
+- I had minor problems during the coding fase, but it took me valuable time. For example, the simple json file reading was not working, I implemented many embbeded and runtime different codes. In the end of day, it was just the wrong place that I put the file, because the NX file structure.
+- The NgRx boilerplate can be very anoying to start, because the syntaxe of this library was changed substantially a long time and it my vary if you use Entity and other complementary elements. Therefore, the code samples on Internet can have different ways to do the same and it tooks time to understand the variations and use each element appropriately.
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+## References
 
-> You can use any of the plugins above to generate applications as well.
+- https://betterprogramming.pub/angular-using-ngrx-schematics-ngrx-entity-to-speed-up-your-development-process-bb4edbab12d
+- https://github.com/brandonroberts/nx-ngrx-seinfeld-app/blob/master/libs/quotes/data-access/src/lib/%2Bstate/quotes.reducer.ts
+- https://material.angular.io/components/card/examples
+- https://www.youtube.com/watch?v=ra_kJFIpU4A
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
 
-## Generate a library
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+## How to use this code
 
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@workspace-nx-nestjs-ng/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+- Clone the project
+- npm install
+- Open 2 different terminals, one for the Back-end and other for the front-end
+- In the back-end terminal, run `npm run api`
+- In the front-end terminal, run `npm run app`
 
 
 
 
 
 
-## ☁ Nx Cloud
 
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
