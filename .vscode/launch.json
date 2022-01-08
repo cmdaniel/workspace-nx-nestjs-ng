@@ -13,6 +13,18 @@
       "type": "pwa-node"
     },
     {
+      "name": "Launch Edge2",
+      "request": "launch",
+      "type": "pwa-msedge",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "${workspaceRoot}/node_modules/**/*.js",
+        "${workspaceRoot}/lib/**/*.js",
+        "<node_internals>/**/*.js"
+      ]
+    },
+    {
       "name": "Launch Edge",
       "request": "launch",
       "type": "pwa-msedge",

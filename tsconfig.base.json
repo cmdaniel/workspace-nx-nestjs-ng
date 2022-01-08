@@ -18,7 +18,6 @@
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "composite": true,
     "paths": {
       "@workspace-nx-nestjs-ng/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
