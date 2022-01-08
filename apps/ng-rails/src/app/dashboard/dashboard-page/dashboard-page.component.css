@@ -1,0 +1,8 @@
+:host ::ng-deep app-card-ticket {
+    width: 100%;
+    height: 100%;
+}
+
+mat-grid-list {
+    width: 100vw;
+}
