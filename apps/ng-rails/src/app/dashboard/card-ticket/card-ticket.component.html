@@ -1,19 +1,36 @@
 <mat-card class="example-card">
 
-  <mat-card-title>FROM: {{ ticket?.from }}</mat-card-title>
+  <mat-card-header>
 
-  <mat-card-subtitle>TO: {{ ticket?.to }}</mat-card-subtitle>
+    <div mat-card-avatar class="example-header-image" [class.return]="ticket?.SingleOrReturn !== 'S'">{{
+      ticket?.SingleOrReturn ? 'S' : 'R' }}</div>
+
+    <mat-card-title>TO: {{ ticket?.to }}</mat-card-title>
+
+    <mat-card-subtitle>FROM: {{ ticket?.from }}</mat-card-subtitle>
+
+  </mat-card-header>
 
   <mat-card-content>
     <p>{{ ticket?.TicketDescription }}</p>
-   
-    <h2>Prices:</h2>
-    <p>Adult: {{ ticket?.AdtPrice }}</p>
-    <p>Children: {{ ticket?.ChdPrice }}</p>
 
-    <p>Single Or Return? {{ ticket?.SingleOrReturn }}</p>
+    <ng-container [ngSwitch]="!!ticket?.AdtPrice">
+      <div *ngSwitchCase="true">
+        <h2>Prices:</h2>
+        <p>Adult: {{ ticket?.AdtPrice }}</p>
+        <p>Children: {{ ticket?.ChdPrice }}</p>
+      </div>
+      <div *ngSwitchDefault>Go to the Information Desk to know more about the prices and availability.</div>
+    </ng-container>
 
-    <h4>Operated by: {{ ticket?.Operator }}</h4>
+    <p>Single Or Return? {{ ticket?.SingleOrReturn === 'S' ? 'Single' : 'Return' }}</p>
+
+    <h4>Operated by:
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip [color]="ticket?.Operator ? 'accent' : 'primary'" selected>{{ ticket?.Operator || 'N/A' }}
+        </mat-chip>
+      </mat-chip-list>
+    </h4>
   </mat-card-content>
 
   <mat-divider inset></mat-divider>
