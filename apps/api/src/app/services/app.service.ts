@@ -15,9 +15,10 @@ export const error = () => catchError((err, obs) => {
 
 export const audit = () => tap(t => console.log(t));
 
-export const mapTo = (dataTransFormFunc: (rails: IRail[]) => ILeg[] | ITicket[]) =>
+// TODO: Refactor this custom operation to don't need context and transform method.
+export const mapTo = (dataTransformContext: RailTransformService, dataTransformMethod: (rails: IRail[]) => ILeg[] | ITicket[]) =>
   map((rails: IRail[] | null) =>
-    rails ? dataTransFormFunc(rails) : null);
+    rails ? dataTransformMethod.call(dataTransformContext, rails) : null);
 
 
 @Injectable()
@@ -47,7 +48,7 @@ export class AppService {
   getLegs(): Observable<ILeg[]> {
     return this.rail.getData()
       .pipe(
-        mapTo(this.dataTransformSrv.mapToLegs),
+        mapTo(this.dataTransformSrv, this.dataTransformSrv.mapToLegs),
         defaultIfEmpty([]),
         audit(),
         error()
@@ -57,7 +58,7 @@ export class AppService {
   getTickets(): Observable<ITicket[]> {
     return this.rail.getData()
       .pipe(
-        mapTo(this.dataTransformSrv.mapToTKTs),
+        mapTo(this.dataTransformSrv, this.dataTransformSrv.mapToTKTs),
         defaultIfEmpty([]),
         audit(),
         error()

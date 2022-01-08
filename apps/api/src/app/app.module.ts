@@ -6,7 +6,6 @@ import { RailOfflineService } from './services/rail-offline.service';
 import { RailService } from './services/rail.service';
 import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
-
 import { TicketController } from './controller/ticket.controller';
 import { AppService } from './services/app.service';
 
@@ -17,6 +16,8 @@ import { AppService } from './services/app.service';
     RailTransformService,
     RailOnlineService,
     RailOfflineService,
-    RailService, AppService],
+    RailService,
+    AppService
+  ],
 })
 export class AppModule { }
