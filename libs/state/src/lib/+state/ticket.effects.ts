@@ -8,6 +8,11 @@ import { of } from 'rxjs';
 import * as TicketsActions from './ticket.actions';
 
 
+export const error = () => catchError(err => {
+    console.log('Error', err);
+    return of(err);
+});
+
 @Injectable()
 export class TicketsEffects {
 
@@ -15,13 +20,10 @@ export class TicketsEffects {
         .pipe(
             ofType(TicketsActions.init),
             fetch({
-                run: (action) => this.ticketsService.getAll()
+                run: () => this.ticketsService.getAll()
                     .pipe(
                         map(tickets => TicketsActions.loadTicketsSuccess({ tickets })),
-                        catchError((err, obs) => {
-                            console.log('Error', err);
-                            return of(err);
-                        })
+                        error()
                     ),
                 onError: (action, error) => {
                     console.error('Error', error);
