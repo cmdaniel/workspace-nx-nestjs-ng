@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -12,23 +12,25 @@ export class TicketsService {
 
     constructor(private http: HttpClient) { }
 
-    getAll() {
+    getAll(): Observable<ITicket[]> {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
         return this.http.get<ITicket[]>(`${this.API_URL}/tickets`, { headers })
             .pipe(
-                map(tickets => {
-                    return tickets.map((ticket: ITicket, index: number) => {
-                        return {
-                            id: index,
-                            ...ticket
-                        };
-                    });
-                }),
-                catchError(this.handleError)
+                this.addUniqId$(),
+                catchError(this.handleError$)
             );
     }
 
-    handleError(error: HttpErrorResponse) {
+    private addUniqId$ = () => map<ITicket[], ITicket[]>(tickets =>
+        tickets.map((ticket: ITicket, index: number) =>
+        ({
+            id: index,
+            ...ticket
+        } as ITicket)
+        )
+    );
+
+    private handleError$(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
             // A client-side or network error occurred.
             console.error('An error occurred:', error.error.message);
@@ -42,4 +44,6 @@ export class TicketsService {
         return throwError(() =>
             'Something bad happened; please try again later.');
     };
+
+
 }
