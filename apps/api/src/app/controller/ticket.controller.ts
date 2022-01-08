@@ -8,6 +8,7 @@ import { AppService } from '../services/app.service';
 export class TicketController {
   constructor(private readonly appService: AppService) { }
 
+  // TODO: this method can be removed in the future. It was kept to test api communication easily.
   @Get('hello')
   getData(): Message {
     return this.appService.getData();
