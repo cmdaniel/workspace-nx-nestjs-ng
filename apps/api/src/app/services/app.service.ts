@@ -1,12 +1,12 @@
-import { ILeg } from '@workspace-nx-nestjs-ng/api-interfaces';
-import { IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
+import { ILeg, IRail } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { ITicket } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { RailTransformService } from './rail-transform.service';
 import { RailService } from './rail.service';
 import { Injectable } from '@nestjs/common';
 import { Message } from '@workspace-nx-nestjs-ng/api-interfaces';
-import { catchError, map, Observable, of, tap } from 'rxjs';
+import { catchError, defaultIfEmpty, map, Observable, of, tap } from 'rxjs';
 import { EnRailType } from '../enum/en-rail-type.enum';
+
 
 export const error = () => catchError((err, obs) => {
   console.log(err);
@@ -14,6 +14,11 @@ export const error = () => catchError((err, obs) => {
 });
 
 export const audit = () => tap(t => console.log(t));
+
+export const mapTo = (dataTransFormFunc: (rails: IRail[]) => ILeg[] | ITicket[]) =>
+  map((rails: IRail[] | null) =>
+    rails ? dataTransFormFunc(rails) : null);
+
 
 @Injectable()
 export class AppService {
@@ -42,7 +47,8 @@ export class AppService {
   getLegs(): Observable<ILeg[]> {
     return this.rail.getData()
       .pipe(
-        map(rails => rails ? this.dataTransformSrv.mapToLegs(rails) : null),
+        mapTo(this.dataTransformSrv.mapToLegs),
+        defaultIfEmpty([]),
         audit(),
         error()
       );
@@ -51,7 +57,8 @@ export class AppService {
   getTickets(): Observable<ITicket[]> {
     return this.rail.getData()
       .pipe(
-        map(rails => rails ? this.dataTransformSrv.mapToTKTs(rails) : null),
+        mapTo(this.dataTransformSrv.mapToTKTs),
+        defaultIfEmpty([]),
         audit(),
         error()
       );
