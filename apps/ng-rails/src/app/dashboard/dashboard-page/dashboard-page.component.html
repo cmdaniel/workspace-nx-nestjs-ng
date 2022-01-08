@@ -1,11 +1,5 @@
 <h2>Tickets</h2>
 
 <div *ngFor="let ticket of (tickets$ | async)">
-  <div>
-    From: {{ ticket.from }}
-  </div>
-  <div>
-    To: {{ ticket.to }}
-  </div>
-  <br />
+  <app-card-ticket [ticket]="ticket" (buttonAction)="buttonAction($event)"></app-card-ticket>
 </div>

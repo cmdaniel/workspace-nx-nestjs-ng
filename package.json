@@ -2,7 +2,11 @@
   "name": "workspace-nx-nestjs-ng",
   "version": "0.0.1",
   "license": "MIT",
-  "author": { "name": "Daniel Melo", "email": "cmdaniel@gmail.com", "url": "https://github.com/cmdaniel/workspace-nx-nestjs-ng" },
+  "author": {
+    "name": "Daniel Melo",
+    "email": "cmdaniel@gmail.com",
+    "url": "https://github.com/cmdaniel/workspace-nx-nestjs-ng"
+  },
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
@@ -18,10 +22,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
+    "@angular/cdk": "^13.1.1",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
     "@angular/forms": "~13.1.0",
+    "@angular/material": "^13.1.1",
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",

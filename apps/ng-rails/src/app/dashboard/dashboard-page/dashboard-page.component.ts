@@ -18,5 +18,8 @@ export class DashboardPageComponent implements OnInit {
     this.store.dispatch(TicketsActions.init());
   }
 
+  buttonAction($eventName: string): void {
+    alert($eventName);
+  }
 
 }

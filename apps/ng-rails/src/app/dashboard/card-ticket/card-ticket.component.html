@@ -1,0 +1,30 @@
+<mat-card class="example-card">
+
+  <mat-card-title>FROM: {{ ticket?.from }}</mat-card-title>
+
+  <mat-card-subtitle>TO: {{ ticket?.to }}</mat-card-subtitle>
+
+  <mat-card-content>
+    <p>{{ ticket?.TicketDescription }}</p>
+   
+    <h2>Prices:</h2>
+    <p>Adult: {{ ticket?.AdtPrice }}</p>
+    <p>Children: {{ ticket?.ChdPrice }}</p>
+
+    <p>Single Or Return? {{ ticket?.SingleOrReturn }}</p>
+
+    <h4>Operated by: {{ ticket?.Operator }}</h4>
+  </mat-card-content>
+
+  <mat-divider inset></mat-divider>
+
+  <mat-card-actions>
+    <button type="button" mat-button (click)="buttonClick('buy')">BUY</button>
+    <button type="button" mat-button (click)="buttonClick('share')">SHARE</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </mat-card-footer>
+
+</mat-card>
