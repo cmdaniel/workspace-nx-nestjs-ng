@@ -15,7 +15,26 @@
 
   <main>
 
-    <mat-grid-list cols="3" rowHeight="1:1">
+    <div class="search">
+
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="enSort" (click)=onSort(enSort)>
+        <mat-button-toggle [value]="ENSORT.Price">Price</mat-button-toggle>
+        <mat-button-toggle [value]="ENSORT.Time">Time</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <input type="text" matInput placeholder="Destination..." [(ngModel)]="keyword"
+            (change)="onSearchChange($event)" (keyup.enter)="onSearchChange($event)"
+            (keyup.esc)="keyword = ''">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+
+    </div>
+
+
+    <mat-grid-list [cols]="breakpoint" rowHeight="1:1" (window:resize)="onResize($event)">
 
       <mat-grid-tile *ngFor="let ticket of (tickets$ | async)">
 

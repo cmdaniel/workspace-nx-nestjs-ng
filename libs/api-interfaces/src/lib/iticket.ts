@@ -2,6 +2,7 @@ export interface ITicket {
     id?: number;
     from: string;
     to: string;
+    DepTime: string;
     AdtPrice: number;
     CanTicketOnDeparture: string;
     ChdPrice: number;

@@ -1,3 +1,4 @@
+import { EnSort } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TicketsActions, TicketsSelectors } from '@workspace-nx-nestjs-ng/states';
@@ -10,15 +11,23 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class DashboardPageComponent implements OnInit {
 
-  tickets$ = this.store.select(TicketsSelectors.selectTicketAll);
+  enSort = EnSort.Time;
+  tickets$ = this.store.select(TicketsSelectors.selectTicketAllSortByAndKeyword);
+
   name = '';
+  keyword = '';
+  breakpoint = 1;
+
+  ENSORT = EnSort;
 
   constructor(
     private store: Store,
     public dialog: MatDialog
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
+    this.breakpoint = this.calculateBreakPoint(window.innerWidth);
     this.store.dispatch(TicketsActions.init());
   }
 
@@ -30,6 +39,23 @@ export class DashboardPageComponent implements OnInit {
         this.openDialog();
         break;
     }
+  }
+
+  onSort(enSort: EnSort): void {
+    this.store.dispatch(TicketsActions.sort({ enSort }));
+  }
+
+  onSearchChange(event$: any): void {
+    this.keyword = event$.target.value || '';
+    this.store.dispatch(TicketsActions.search({ keyword: this.keyword }));
+  }
+
+  onResize(event$: any) {
+    this.breakpoint = this.calculateBreakPoint(event$.target.innerWidth);
+  }
+
+  private calculateBreakPoint(width: number): number {
+    return (width <= 1200) ? ((width <= 800) ? 1 : 2) : 3;
   }
 
   private openDialog(): void {
