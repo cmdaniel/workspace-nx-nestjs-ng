@@ -12,6 +12,7 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
+    "build-api": "nx build api",
     "test": "nx test",
     "api": "nx serve api",
     "app": "nx serve ng-rails",

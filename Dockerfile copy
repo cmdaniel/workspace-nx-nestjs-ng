@@ -1,0 +1,27 @@
+FROM node:14.18.2 as build
+
+WORKDIR /api
+COPY package.json .
+COPY angular.json .
+COPY nx.json .
+
+
+RUN npm install
+
+COPY /assets .
+COPY /dist ./api
+
+RUN npm run build-api --prod
+
+
+
+FROM node:14.18.2 as run
+WORKDIR /api
+
+COPY package.json .
+
+RUN npm install --only=production
+COPY --from=build /api/dist .
+
+CMD npm run start:prod
+
