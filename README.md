@@ -1,10 +1,10 @@
 
 
-# Full-stack Developer role test
+# Full-stack Developer role testing
 
 
-**Acess the deployed version of this project on this link:**
-<a href="https://workspace-nx-nestjs-ng-bhop2309n-cmdaniel.vercel.app/" target="_blank">NestJs, Angular and NX project</a>
+**Please, access the deployed version of this project on this link:**
+<a href="https://workspace-nx-nestjs-ng.vercel.app/" target="_blank">NestJs, Angular and NX project</a>
 
 <p>This project was created using:
   <ul>
@@ -33,16 +33,17 @@
 
 
 ## Project scope
-<p>From the ground up, just receiving a json file with Rails, Legs and Tickets, create a NodeJs Backend and an Angular Front-end to show the tickets.</p>
+<p>From the ground up, just receiving a json file with Rails, Legs and Tickets, I had to create a NodeJs Backend and an Angular Front-end to show the Tickets.</p>
 
 ## Project Architecture
 
 ### Back-end
-<p>In the Back-end I used the NestJs framework. It is a great, easy to use and very similar to the Angular syntaxe. It was build on the Express.</p>
+<p>In the Back-end I used the NestJs framework. It is a great, easy to use and very similar to the Angular syntax. It was built on the Express.</p>
 <p>Despite a very simple scope, I tried to demonstrate some SOLID principles.</p>
-<p>**app.service**: is the main service responsible to provide data to the controllers. It receives the provider (RailService) and data transformation services by Dependence Injection. I also created some custom operators for RxJs and the result is a very clean code, easy to read and also loosely coupled with the data provider and data tranformation classes.</p>
-<p>**RailService**: It just contain a Single Responsability and a single reason to change. It has a factory method with a business rule that will factory the data provider according to condition (EnRailType). It allows provide data from the json file, but also implement an API call in the future without requires change in the main service. Beyond being prepared to future extensions, it also allows commute the data source based on Use Cases. For example, a simple method could detect a problem with the API (It was not implemented an API call, but it basic structure was) and them factory the json file instead.</p>
-<p>Just because of the limited time, just the last level was consider to be exposed (Tickets) and the transformation does a reduction in the json source to extract some elements of superior level and all of the Tickets entity.</p>
+<p>**app.service**: It is the main service responsible for providing data to the Controllers. It receives the provider (RailService) and Data Transformation Services by Dependence Injection. I also created some custom operators for RxJs pipes and the result is a very clean code, easy to read and also loosely coupled with the Data Provider and Data Tranformation Classes.</p>
+<p>**RailService**: It just contain a Single Responsability and a Single Reason to Change. It has a factory method with a Business Rule that will factory the Data Provider according to condition (EnRailType). It allows provide data from the json file, but also implement an API call in the future without requiring change in the main service. Beyond being prepared to future extensions, it also allows commuting the Data Source based on Use Cases. For example, a simple method could detect a problem with the API and them factory the json file instead. It is also a candidate to receive a class to check for a record in a Redis Cache.</p>
+<p>Just because of the limited time, only the last level of the data tree was considered to be exposed (Tickets node) and the transformation does a reduction in the json source to extract some elements of higher level and all of the Tickets entity.</p>
+
 
 ### Front-end
 <p>It is a well structure Angular project, with some separated elements in different components and Input and Output communication between them.</p>
