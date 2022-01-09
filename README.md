@@ -53,27 +53,30 @@
 
 
 ## What can be improved
-- Implement routes and route guards in the front-end
-- Create search, and hierachic organization between Rail, Legs and Tickets
-- Change the components strategies to turn-off the change detection and improve performance
+- Implement Routes and Route Guards in the front-end
+- Create a hierachic organization between Rail, Legs and Tickets
+- Change the components strategy to turn-off the change detection and improve performance
 - In the back-end if the relation between Rail, Legs and Tickets has much more complexity, it will be interesting have separated classes and interfaces to describe each one of these classes and the relation between then, but respecting SOLID principles.
+- **I am oppen to any suggestions:** I would love to learn from an experient archicted/developer some improvements ideas!
+
 
 ## Disclosures
 <p>This is an autoral and open source project, but it used some important references on Internet. The main refs are listed bellow.</p>
-<p>Since it is a public repository, it doesn't disclose the name of recruiters or companies that required this coding test.</p>
+<p>Since it is a public repository, it doesn't disclose the name of recruiters or companies which required this coding test.</p>
 <p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
 <p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
-<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it.</p>
-<p>I was the only one developer of this project and I had any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
+<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it over time.</p>
+<p>I was the only one developer of this project and I hadn't any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
 
 ## Time tracking
 <p>I described each development stack in the git commits. So, it is possible to see how I add each element, build features, fixed bugs and code refactoring.
-This project was executed in my spare time in 3 different days (06/jan, 07/jan and 08/jan/2022). </p>
-<p>In total, I spend about 9 hours in the Back and Front end, plus 2 hours building the container and deploy.</p>
+This project was executed in my spare time in 4 different days (06/jan, 07/jan, 08/jan and 09/jan/2022). </p>
+<p>In total, I spend about 9 hours in the Back and Front end, plus 6 hours building the container and deploy.</p>
+<p>The deploy part of the project, I used the time to develop some more DevOps skills and I spent 2 hours in a phone call with an AWS Support Engineer tring to deploy the API to ECS with Fargate (it manages the containes). I was able to deploy the container and make it works, but the Load Balancer didn't have a https certificate so, I couldn't use in this project. The current version has the API deployed to an EC2 on AWS, subdomain on Route 53 and free https certificate using Certify The Web.</p>
 
 ## Difficults during the execution
-- I had minor problems during the coding fase, but it took me valuable time. For example, the simple json file reading was not working, I implemented many embbeded and runtime different codes. In the end of day, it was just the wrong place that I put the file, because the NX file structure.
-- The NgRx boilerplate can be very anoying to start, because the syntaxe of this library was changed substantially a long time and it my vary if you use Entity and other complementary elements. Therefore, the code samples on Internet can have different ways to do the same and it tooks time to understand the variations and use each element appropriately.
+- I had minor problems during the coding fase, but it took me valuable time. For example, the simple json file reading was not working, I implemented many embbeded and runtime different codes. In the end of day, it was just the wrong place that I put the file, because the NX file structure. The current project fetch the file from S3.
+- The NgRx boilerplate can be very anoying to commence, because the syntaxe of this library was changed substantially along the time and it may vary if you use Entity and other complementary artifacts. Therefore, the code samples on Internet have different ways to do the same and it tooks time to understand the variations and use each element appropriately.
 
 
 ## References
@@ -82,14 +85,15 @@ This project was executed in my spare time in 3 different days (06/jan, 07/jan a
 - https://github.com/brandonroberts/nx-ngrx-seinfeld-app/blob/master/libs/quotes/data-access/src/lib/%2Bstate/quotes.reducer.ts
 - https://material.angular.io/components/card/examples
 - https://www.youtube.com/watch?v=ra_kJFIpU4A
-
+- https://aws.amazon.com/pt/premiumsupport/knowledge-center/create-alb-auto-register/
+- https://aws.amazon.com/pt/premiumsupport/knowledge-center/associate-acm-certificate-alb-nlb/
 
 
 ## How to use this code
 
-- Check if you machine or container has the Node 14.18.2
-- Clone the project
-- npm install
+- Check if your machine or container has the Node 14.18.2
+- Clone this git project
+- `npm install`
 - Open 2 different terminals, one for the Back-end and other for the front-end:
   - In the back-end terminal, run `npm run api`
   - In the front-end terminal, run `npm run app`
