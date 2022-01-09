@@ -30,15 +30,6 @@
   **Warrington, UK - January 8th, 2022**
 
 
-## Disclosures
-
-<p>This is an autoral and open source project, but it used some important references on Internet. The main refs are listed bellow.</p>
-<p>Since it is a public repository, it doesn't disclose the name of recruiters or companies that required this coding test.</p>
-<p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
-<p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
-<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it.</p>
-<p>I was the only one developer of this project and I had any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
-
 ## Project scope
 <p>From the ground up, just receiving a json file with Rails, Legs and Tickets, create a NodeJs Backend and an Angular Front-end to show the tickets.</p>
 
@@ -51,6 +42,20 @@
 <p>**RailService**: It just contain a Single Responsability and a single reason to change. It has a factory method with a business rule that will factory the data provider according to condition (EnRailType). It allows provide data from the json file, but also implement an API call in the future without requires change in the main service. Beyond being prepared to future extensions, it also allows commute the data source based on Use Cases. For example, a simple method could detect a problem with the API (It was not implemented an API call, but it basic structure was) and them factory the json file instead.</p>
 
 
+### Front-end
+<p>It is a well structure Angular project, with some separated elements in different components and Input and Output communication between them.</p>
+<p>It was also implemented a Redux state management with the NgRx. The interface is Reactive what means any changes in the data emission will automatically update the interface.</p>
+<p>The use of async pipe also unsubscribe the observable automatically to avoid memory leak</p>
+<p>Since the visuals wasn't a requirement, I didn't spend much time thinking in the UX. But is a well presented interface, using Angular Material in a Grid that turns the page responsive.</p>
+
+
+## Disclosures
+<p>This is an autoral and open source project, but it used some important references on Internet. The main refs are listed bellow.</p>
+<p>Since it is a public repository, it doesn't disclose the name of recruiters or companies that required this coding test.</p>
+<p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
+<p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
+<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it.</p>
+<p>I was the only one developer of this project and I had any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
 
 ## Time tracking
 <p>I described each development stack in the git commits. So, it is possible to see how I add each element, build features, fixed bugs and code refactoring.
