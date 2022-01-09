@@ -11,6 +11,7 @@ export interface State extends EntityState<ITicket> {
     loaded: boolean; // has the Quotes list been loaded
     error?: string | null; // last known error (if any)
     enSort: EnSort;
+    keyword: string | undefined;
 }
 
 
@@ -24,7 +25,8 @@ export const initialStateTicket: State = adapterTicket.getInitialState({
     error: undefined,
     selectedId: null,
     loaded: false,
-    enSort: EnSort.Time
+    enSort: EnSort.Time,
+    keyword: undefined
 });
 
 function sortOnDestinationsAndOrigens(a: ITicket, b: ITicket) {
@@ -39,6 +41,7 @@ export const reducer = createReducer(
     initialStateTicket,
     on(TicketActions.init, (state) => ({ ...state, loaded: false, error: null })),
     on(TicketActions.sort, (state, action) => ({ ...state, enSort: action.enSort })),
+    on(TicketActions.search, (state, action) => ({ ...state, keyword: action.keyword })),
     on(TicketActions.loadTicketsSuccess,
         (state, action) => adapterTicket.setAll(action.tickets, { ...state, loaded: true })
     ),

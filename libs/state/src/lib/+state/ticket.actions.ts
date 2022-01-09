@@ -18,3 +18,8 @@ export const sort = createAction(
     props<{ enSort: EnSort }>()
 );
 
+export const search = createAction(
+    '[Tickets Page] Search Tickets by Keyword',
+    props<{ keyword: string }>()
+);
+

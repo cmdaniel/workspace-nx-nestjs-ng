@@ -12,18 +12,22 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 export class DashboardPageComponent implements OnInit {
 
   enSort = EnSort.Time;
-  tickets$ = this.store.select(TicketsSelectors.selectTicketAllSortBy);
+  tickets$ = this.store.select(TicketsSelectors.selectTicketAllSortByAndKeyword);
 
   name = '';
+  keyword = '';
+  breakpoint = 1;
 
   ENSORT = EnSort;
 
   constructor(
     private store: Store,
     public dialog: MatDialog
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
+    this.breakpoint = this.calculateBreakPoint(window.innerWidth);
     this.store.dispatch(TicketsActions.init());
   }
 
@@ -37,8 +41,21 @@ export class DashboardPageComponent implements OnInit {
     }
   }
 
-  onSort($event: EnSort): void {
-    this.store.dispatch(TicketsActions.sort({ enSort: $event }));
+  onSort(enSort: EnSort): void {
+    this.store.dispatch(TicketsActions.sort({ enSort }));
+  }
+
+  onSearchChange(event$: any): void {
+    this.keyword = event$.target.value || '';
+    this.store.dispatch(TicketsActions.search({ keyword: this.keyword }));
+  }
+
+  onResize(event$: any) {
+    this.breakpoint = this.calculateBreakPoint(event$.target.innerWidth);
+  }
+
+  private calculateBreakPoint(width: number): number {
+    return (width <= 1200) ? ((width <= 800) ? 1 : 2) : 3;
   }
 
   private openDialog(): void {

@@ -1,4 +1,4 @@
-import { EnSort } from './../../../../api-interfaces/src/lib/enum/en-sort.enum';
+import { EnSort } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { State } from './ticket.reducer';
 
@@ -19,6 +19,15 @@ export const selectTicketAllSortBy = createSelector(
     (tickets, state) => state.enSort === EnSort.Time ?
         tickets?.sort((a, b) => a.DepTime.localeCompare(b.DepTime)) :
         tickets?.sort((a, b) => b.AdtPrice - a.AdtPrice)
+);
+
+export const selectTicketAllSortByAndKeyword = createSelector(
+    selectTicketAll,
+    selectTicketState,
+    (tickets, state) => (state.enSort === EnSort.Time ?
+        tickets.sort((a, b) => a.DepTime.localeCompare(b.DepTime)) :
+        tickets.sort((a, b) => +(b.AdtPrice || 0) - +(a.AdtPrice || 0)))
+        .filter(f => !state.keyword || f.to.toLowerCase().includes(state.keyword.toLowerCase()))
 );
 
 export const selectTicketAllSortByTime = createSelector(
