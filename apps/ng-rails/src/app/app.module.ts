@@ -3,7 +3,6 @@ import { HttpBaseUrlInterceptorModule } from './http-base-url.interceptor';
 import { DashboardPageComponent } from './dashboard/dashboard-page/dashboard-page.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard-page/dashboard.module';
 import { StoreModule } from '@ngrx/store';
@@ -15,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [],
   imports: [
     BrowserModule,
     HttpClientModule,
