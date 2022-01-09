@@ -13,6 +13,7 @@
     "start": "nx serve",
     "build": "nx build",
     "build-api": "nx build api",
+    "build-app": "nx build app",
     "test": "nx test",
     "api": "nx serve api",
     "app": "nx serve ng-rails",
