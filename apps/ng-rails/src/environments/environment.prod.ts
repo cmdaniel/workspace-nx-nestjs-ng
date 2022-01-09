@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://18.208.148.119/api'
+  apiBaseUrl: 'https://workspace-nx-nestjs-ng-api-kappa.vercel.app/api'
 };
