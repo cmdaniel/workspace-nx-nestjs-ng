@@ -83,11 +83,12 @@ This project was executed in my spare time in 3 different days (06/jan, 07/jan a
 
 ## How to use this code
 
+- Check if you machine or container has the Node 14.18.2
 - Clone the project
 - npm install
-- Open 2 different terminals, one for the Back-end and other for the front-end
-- In the back-end terminal, run `npm run api`
-- In the front-end terminal, run `npm run app`
+- Open 2 different terminals, one for the Back-end and other for the front-end:
+  - In the back-end terminal, run `npm run api`
+  - In the front-end terminal, run `npm run app`
 
 
 ## Run the Unit Tests for the back-end
