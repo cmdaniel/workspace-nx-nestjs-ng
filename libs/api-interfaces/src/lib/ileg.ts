@@ -4,4 +4,5 @@ export interface ILeg {
     TKTs: ITicket[];
     DepStnFull: string;
     ArrStnFull: string;
+    DepTime: string;
 }

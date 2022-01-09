@@ -9,6 +9,8 @@
 
     <mat-card-subtitle>FROM: {{ ticket?.from }}</mat-card-subtitle>
 
+    <h4>DEPARTURE: {{ ticket?.DepTime }}</h4>
+    
   </mat-card-header>
 
   <mat-card-content>
@@ -20,7 +22,8 @@
         <p>Adult: {{ ticket?.AdtPrice }}</p>
         <p>Children: {{ ticket?.ChdPrice }}</p>
       </div>
-      <div class="no-prices" *ngSwitchDefault>Go to the Information Desk to know more about the prices and availability.</div>
+      <div class="no-prices" *ngSwitchDefault>Go to the Information Desk to know more about the prices and availability.
+      </div>
     </div>
 
     <p>Single Or Return? {{ ticket?.SingleOrReturn === 'S' ? 'Single' : 'Return' }}</p>

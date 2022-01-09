@@ -1,3 +1,4 @@
+import { EnSort } from '@workspace-nx-nestjs-ng/api-interfaces';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TicketsActions, TicketsSelectors } from '@workspace-nx-nestjs-ng/states';
@@ -10,8 +11,12 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class DashboardPageComponent implements OnInit {
 
-  tickets$ = this.store.select(TicketsSelectors.selectTicketAll);
+  enSort = EnSort.Time;
+  tickets$ = this.store.select(TicketsSelectors.selectTicketAllSortBy);
+
   name = '';
+
+  ENSORT = EnSort;
 
   constructor(
     private store: Store,
@@ -30,6 +35,10 @@ export class DashboardPageComponent implements OnInit {
         this.openDialog();
         break;
     }
+  }
+
+  onSort($event: EnSort): void {
+    this.store.dispatch(TicketsActions.sort({ enSort: $event }));
   }
 
   private openDialog(): void {

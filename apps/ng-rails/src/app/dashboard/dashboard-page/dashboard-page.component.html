@@ -15,6 +15,12 @@
 
   <main>
 
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="enSort" (click)=onSort(enSort)>
+      <mat-button-toggle [value]="ENSORT.Price">Price</mat-button-toggle>
+      <mat-button-toggle [value]="ENSORT.Time">Time</mat-button-toggle>
+    </mat-button-toggle-group>
+
+
     <mat-grid-list cols="3" rowHeight="1:1">
 
       <mat-grid-tile *ngFor="let ticket of (tickets$ | async)">
