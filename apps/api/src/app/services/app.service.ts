@@ -30,7 +30,8 @@ export class AppService {
     private railSrv: RailService,
     private dataTransformSrv: RailTransformService
   ) {
-    this.rail = this.railSrv.factory(EnRailType.Offline);
+    /** In localhost it can uses EnRailType.Offline to read the local json file. */
+    this.rail = this.railSrv.factory(EnRailType.Online);
   }
 
   getData(): Message {
