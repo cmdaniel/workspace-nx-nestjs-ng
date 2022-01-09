@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "env": {
+        "PORT": 80
+    },
+    "builds": [
+        {
+            "src": "dist/apps/api/main.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "dist/apps/api/main.ts",
+            "methods": [
+                "GET"
+            ]
+        }
+    ]
+}
