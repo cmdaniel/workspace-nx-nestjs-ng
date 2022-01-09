@@ -4,7 +4,7 @@
 
 
 **Acess the deployed version of this project on this link:**
-<a href="https://www.industria-i.com.br/" target="_blank">NestJs, Angular and NX project</a>
+<a href="https://workspace-nx-nestjs-ng-bhop2309n-cmdaniel.vercel.app/" target="_blank">NestJs, Angular and NX project</a>
 
 <p>This project was created using:
   <ul>
@@ -17,13 +17,15 @@
     <li> Jest for the unit tests</li>
   </ul>     
 </p>
-<p>The deploy to containers required:
+<p>The deploy in AWS containers required:
   <ul>
     <li>Docker,</li>
     <li>AWS cli installation</li>
-    <li>and Amazon ECS.</li>
+    <li>and Amazon ECS and Fargate.</li>
    </ul>
   </p>
+  
+<p>The Front-end was deployed to Vercel, integrated with the github repository</p>
 
 🔎 **Author: Daniel Melo - cmdaniel@gmail.com**
 
