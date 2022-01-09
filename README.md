@@ -46,10 +46,11 @@
 
 
 ### Front-end
-<p>It is a well structure Angular project, with some separated elements in different components and Input and Output communication between them.</p>
-<p>It was also implemented a Redux state management with the NgRx. The interface is Reactive what means any changes in the data emission will automatically update the interface.</p>
-<p>The use of async pipe also unsubscribe the observable automatically to avoid memory leak</p>
-<p>Since the visuals wasn't a requirement, I didn't spend much time thinking in the UX. But is a well presented interface, using Angular Material in a Grid that turns the page responsive.</p>
+<p>It is a well structured Angular project, with some separated elements in different components and Input and Output communication between them.</p>
+<p>It was also implemented a Redux State Management with the NgRx. The user interface is Reactive what means any changes in the data emission will automatically update the interface. A use for this changes can be perceived in the implementarion of the sort buttons and the input search.</p>
+<p>The use of Async Pipe also unsubscribes the Observable automatically to avoid memory leaks.</p>
+<p>Since the visuals wasn't a requirement, I didn't spend much time thinking in the UX. But is a well presented interface, using Angular Material in a Grid that turns the page responsive, reducing the number of columns according with the View Port size (user screen).</p>
+
 
 ## What can be improved
 - Implement routes and route guards in the front-end
