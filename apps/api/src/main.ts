@@ -14,7 +14,17 @@ async function bootstrap() {
 
   const port = process.env.PORT || 80;
 
-  app.enableCors();
+  app.use((req: any, res: any, next: any) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+    next();
+  });
+
+  app.enableCors({
+    allowedHeaders: "*",
+    origin: "*"
+  });
 
   await app.listen(port);
 
