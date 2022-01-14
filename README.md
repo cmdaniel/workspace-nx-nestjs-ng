@@ -3,9 +3,6 @@
 # Full-stack Developer role testing
 
 
-**Please, access the deployed version of this project on this link:**
-<a href="https://workspace-nx-nestjs-ng.vercel.app/" target="_blank">NestJs, Angular and NX project</a>
-
 <p>This project was created using:
   <ul>
     <li>Nx(monolith management with libs sharing between back and front-end),</li>
