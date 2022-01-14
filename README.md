@@ -62,17 +62,15 @@
 <p>Since it is a public repository, it doesn't disclose the name of recruiters or companies which required this coding test.</p>
 <p>I received a json file but it mimics a public API and doesn't not violate personal or private sensitive data.</p>
 <p>I only create unit tests, using a TDD aproach (I started coding the tests before the API methods) for the back-end.</p>
-<p>My experience with unit tests and e2e tests are not very strong, but I think that I can make it works, and improve my skills on it over time.</p>
 <p>I was the only one developer of this project and I hadn't any help beyond the stack overflow, github autopilot, youtube and blogs. My computer has a different account registered on git, so probably the commits are from my other github user.</p>
 
 ## Time tracking
 <p>I described each development stack in the git commits. So, it is possible to see how I add each element, build features, fixed bugs and code refactoring.
-This project was executed in my spare time in 4 different days (06/jan, 07/jan, 08/jan and 09/jan/2022). </p>
-<p>In total, I spend about 9 hours in the Back and Front end, plus 6 hours building the container and deploy.</p>
-<p>The deploy part of the project, I used the time to develop some more DevOps skills and I spent 2 hours in a phone call with an AWS Support Engineer tring to deploy the API to ECS with Fargate (it manages the containes). I was able to deploy the container and make it works, but the Load Balancer didn't have a https certificate so, I couldn't use in this project. The current version has the API deployed to an EC2 on AWS, subdomain on Route 53 and free https certificate using Certify The Web.</p>
+This project was executed in my spare time in 4 different days. </p>
+<p>In total, I spend about 6.5 hours in the Back and Front end, plus 2 hours building the container and deploy.</p>
+
 
 ## Difficults during the execution
-- I had minor problems during the coding fase, but it took me valuable time. For example, the simple json file reading was not working, I implemented many embbeded and runtime different codes. In the end of day, it was just the wrong place that I put the file, because the NX file structure. The current project fetch the file from S3.
 - The NgRx boilerplate can be very anoying to commence, because the syntaxe of this library was changed substantially along the time and it may vary if you use Entity and other complementary artifacts. Therefore, the code samples on Internet have different ways to do the same and it tooks time to understand the variations and use each element appropriately.
 
 
@@ -100,8 +98,4 @@ This project was executed in my spare time in 4 different days (06/jan, 07/jan, 
 - `npm run test-api`
 or
 - `npm run test2` (it will run the tests in watch mode)
-
-
-
-
 
